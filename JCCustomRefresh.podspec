@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JCCustomRefresh"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "自定义刷新."
 
   # This description is used to generate tags and improve search results.
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "Objective-C"
+  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/JackCoderForLove/JCCustomRefresh.git", :tag => "#{1.0}" }
+  s.source       = { :git => "https://github.com/JackCoderForLove/JCCustomRefresh.git", :tag => "#{1.1}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,10 +91,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "JCCustomRefresh", "JCCustomRefresh/JCCustomRefresh/JCRefreshMaster/**/*.{h,m}"
+  s.source_files  = "JCCustomRefresh", "JCCustomRefresh/**/*.{h,m}"
   #s.exclude_files = "JCCustomRefresh/JCCustomRefresh/JCRefreshMaster"
 
-  # s.public_header_files = "Classes/**/*.h"
+  # s.public_header_files = "JCCustomRefresh/JCCustomRefresh/JCRefreshMaster/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -119,7 +119,8 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
    s.frameworks = "Foundation", "UIKit"
-  
+   s.requires_arc = true
+
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
@@ -133,6 +134,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-   s.dependency "MJRefresh"
+   s.dependency "MJRefresh","~>3.1.12"
 
 end
